@@ -7,6 +7,7 @@ import purpleCandy from './images/purple_candy.png'
 import redCandy from './images/red_candy.png'
 import yellowCandy from './images/yellow_candy.png'
 import blank from './images/blank.png'
+import pepega from './music/music.mp3'
 
 const width = 8
 const candyColors = [blueCandy, greenCandy, orangeCandy, purpleCandy, redCandy, yellowCandy]
@@ -213,6 +214,11 @@ const App = () => {
 
   return (
     <div className="app">
+
+        <audio allow="autoPlay" autoPlay={true} controls={true} loop={true} style={{position: "absolute", top:"75%", left:"10%"}}>
+          <source src={pepega} type="audio/mp3" />
+          </audio>
+      
         <div className="game">
           {currentColorArg.map((candyColor, index) => (
 
@@ -230,8 +236,10 @@ const App = () => {
             onDragEnd={dragEnd}
             />
             
+            
           ))}
         </div>
+        
         <ScoreBoard score={scoreDisplay} />
     </div>
   );
